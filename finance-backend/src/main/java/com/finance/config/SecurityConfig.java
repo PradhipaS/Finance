@@ -32,6 +32,9 @@ public class SecurityConfig {
                 // Login is open to everyone
                 .antMatchers("/api/auth/**").permitAll()
 
+                // Swagger UI - open to everyone
+                .antMatchers("/swagger-ui/**", "/swagger-ui.html", "/v3/api-docs/**").permitAll()
+
                 // Only ADMIN can manage users
                 .antMatchers("/api/users/**").hasRole("ADMIN")
 
